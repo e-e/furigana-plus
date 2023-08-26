@@ -1,24 +1,22 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.readingHtml = exports.hiragana = exports.expression = exports.reading = void 0;
-// @ts-ignore
-const gem_furigana_1 = __importDefault(require("gem-furigana"));
+const gem_furigana_1 = require("gem-furigana");
 const reading = (text) => {
-    return new gem_furigana_1.default(text).Reading;
+    console.log(gem_furigana_1.Furigana);
+    console.log(typeof gem_furigana_1.Furigana);
+    return new gem_furigana_1.Furigana(text).Reading;
 };
 exports.reading = reading;
 const expression = (text) => {
-    return new gem_furigana_1.default(text).Expression;
+    return new gem_furigana_1.Furigana(text).Expression;
 };
 exports.expression = expression;
 const hiragana = (text) => {
-    return new gem_furigana_1.default(text).Hiragana;
+    return new gem_furigana_1.Furigana(text).Hiragana;
 };
 exports.hiragana = hiragana;
 const readingHtml = (text) => {
-    return new gem_furigana_1.default(text).ReadingHtml;
+    return new gem_furigana_1.Furigana(text).ReadingHtml;
 };
 exports.readingHtml = readingHtml;

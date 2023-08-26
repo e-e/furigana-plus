@@ -8,7 +8,7 @@
   "repository": {
     "url": "https://github.com/e-e/furigana-plus"
   },
-  "version": "1.0.5",
+  "version": "1.0.1",
   "main": "src/index.js",
   "license": "MIT",
   "keywords": [
@@ -28,16 +28,14 @@
   "scripts": {
     "build": "tsc",
     "publish": "yarn build && npm publish",
-    "prepare" : "npm run build",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "devDependencies": {
     "@jest/globals": "^29.6.2",
-    "@types/jest": "^29.5.3",
+    "@types/jest": "^29.5.4",
     "jest": "^29.6.2",
     "prettier": "^3.0.2",
     "ts-jest": "^29.1.1",

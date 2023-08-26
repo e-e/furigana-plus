@@ -1,7 +1,8 @@
-// @ts-ignore
-import Furigana from "gem-furigana";
+import { Furigana } from "gem-furigana";
 
 export const reading = (text: string): string => {
+  console.log(Furigana);
+  console.log(typeof Furigana);
   return new Furigana(text).Reading;
 };
 
