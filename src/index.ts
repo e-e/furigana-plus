@@ -1,19 +1,37 @@
 import { Furigana } from "gem-furigana";
+import { rubyToBrackets } from "ruby-to-brackets/src/ruby-to-brackets";
 
-export const reading = (text: string): string => {
-  console.log(Furigana);
-  console.log(typeof Furigana);
+interface FuriganaPlus {
+  (text: string): string;
+  fromRuby: (html: string) => string;
+}
+
+const reading: FuriganaPlus = (text: string): string => {
   return new Furigana(text).Reading;
 };
+reading.fromRuby = (html: string): string => {
+  return new Furigana(rubyToBrackets(html)).Reading;
+};
 
-export const expression = (text: string): string => {
+const expression: FuriganaPlus = (text: string): string => {
   return new Furigana(text).Expression;
 };
+expression.fromRuby = (html: string): string => {
+  return new Furigana(rubyToBrackets(html)).Expression;
+};
 
-export const hiragana = (text: string): string => {
+const hiragana: FuriganaPlus = (text: string): string => {
   return new Furigana(text).Hiragana;
 };
+hiragana.fromRuby = (html: string): string => {
+  return new Furigana(rubyToBrackets(html)).Hiragana;
+};
 
-export const readingHtml = (text: string): string => {
+const readingHtml: FuriganaPlus = (text: string): string => {
   return new Furigana(text).ReadingHtml;
 };
+readingHtml.fromRuby = (html: string): string => {
+  return new Furigana(rubyToBrackets(html)).ReadingHtml;
+};
+
+export { expression, hiragana, reading, readingHtml };

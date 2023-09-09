@@ -8,7 +8,7 @@
   "repository": {
     "url": "https://github.com/e-e/furigana-plus"
   },
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "src/index.js",
   "license": "MIT",
   "keywords": [
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.6.2",
+    "@types/cheerio": "^0.22.32",
     "@types/jest": "^29.5.4",
     "jest": "^29.6.2",
     "prettier": "^3.0.2",
@@ -45,6 +46,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "gem-furigana": "^1.0.9"
+    "gem-furigana": "^1.0.9",
+    "ruby-to-brackets": "^1.0.5"
   }
 }

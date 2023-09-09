@@ -1,20 +1,49 @@
 import { Furigana } from "gem-furigana";
 import { expression, hiragana, reading, readingHtml } from "./index";
 
-const text = "今日[きょう]は、ちょっと。。。";
+const textBracket = "今日[きょう]は、ちょっと。。。";
+const textRuby = "<ruby>今日<rt>きょう</rt></ruby>は、ちょっと。。。";
 
-it("reading", () => {
-  expect(reading(text)).toEqual(new Furigana(text).Reading);
+describe("from bracket notation", () => {
+  it("reading", () => {
+    expect(reading(textBracket)).toEqual(new Furigana(textBracket).Reading);
+  });
+
+  it("expression", () => {
+    expect(expression(textBracket)).toEqual(
+      new Furigana(textBracket).Expression,
+    );
+  });
+
+  it("hiragana", () => {
+    expect(hiragana(textBracket)).toEqual(new Furigana(textBracket).Hiragana);
+  });
+
+  it("readingHtml", () => {
+    expect(readingHtml(textBracket)).toEqual(
+      new Furigana(textBracket).ReadingHtml,
+    );
+  });
 });
 
-it("expression", () => {
-  expect(expression(text)).toEqual(new Furigana(text).Expression);
-});
+describe("from ruby notation", () => {
+  it("reading", () => {
+    expect(reading.fromRuby(textRuby)).toEqual(
+      "今日[きょう]は、ちょっと。。。",
+    );
+  });
 
-it("hiragana", () => {
-  expect(hiragana(text)).toEqual(new Furigana(text).Hiragana);
-});
+  it("expression", () => {
+    expect(expression.fromRuby(textRuby)).toEqual("今日は、ちょっと。。。");
+  });
 
-it("readingHtml", () => {
-  expect(readingHtml(text)).toEqual(new Furigana(text).ReadingHtml);
+  it("hiragana", () => {
+    expect(hiragana.fromRuby(textRuby)).toEqual("きょうは、ちょっと。。。");
+  });
+
+  it("readingHtml", () => {
+    expect(readingHtml.fromRuby(textRuby)).toEqual(
+      "<ruby><rb>今日</rb><rt>きょう</rt></ruby>は、ちょっと。。。",
+    );
+  });
 });
