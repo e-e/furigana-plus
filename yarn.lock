@@ -2090,10 +2090,10 @@ resolve@^1.20.0:
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
-ruby-to-brackets@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/ruby-to-brackets/-/ruby-to-brackets-1.0.5.tgz#77e7befa723f5399cdddd535e05251c11daab4cd"
-  integrity sha512-UWVVe7FSTzvwv83Iwcf6V9AFs+Jpx+dCrdIeRKSfFG+88VYv7kY0gzJovq8w2iWeLF3x8sEXtDZErzUcB5g13A==
+ruby-to-brackets@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ruby-to-brackets/-/ruby-to-brackets-1.1.0.tgz#cc3dcb9a68c68ae0eeec51c9268a059894bbb75c"
+  integrity sha512-ZLRgncp4wmjtNAYt8+KjMizNCkDaEkJAF2/+Vvq32npz7p8E578U55Ov6rWzyGoaZeMZBkFp7L5KOW3yZKDwEw==
   dependencies:
     cheerio "^1.0.0-rc.12"
 
